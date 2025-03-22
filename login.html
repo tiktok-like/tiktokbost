@@ -1,0 +1,102 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Log in to TikTok - Access your account">
+    <title>Log in to TikTok</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Adjust the size of icons to be the same */
+        .social-button i {
+            width: 24px;
+            height: 24px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem; /* Increased font size */
+        }
+
+        /* Styling the buttons */
+        .social-button {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; /* Align content to the left */
+            padding: 10px 32px; /* Increase padding for height and width */
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            font-weight: 600;
+            gap: 16px;
+            margin-bottom: 20px; /* Increased margin between buttons */
+            font-size: 1.125rem;
+            width: 100%; /* Increased width to 90% */
+            height: 90px; /* Increased height for a longer button */
+            margin-left: auto; /* Align buttons to the center horizontally */
+            margin-right: auto;
+            transition: background-color 0.3s ease; /* Smooth transition on hover */
+        }
+
+        .social-button:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Adjust spacing for the container */
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Align everything at the top */
+            min-height: 100vh;
+            align-items: center;
+            padding: 20px;
+            width: 100%; /* Ensure container fills the screen width */
+        }
+
+        .footer-text {
+            margin-top: 100px; /* Increased margin to move footer text further down */
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <div class="container">
+        <!-- Header Text -->
+        <div class="text-center mt-10">
+            <h1 class="text-3xl font-bold mb-2">Log in to TikTok</h1>
+            <p class="text-gray-600 mb-6">Manage your account, check notifications, comment on videos, and more.</p>
+        </div>
+
+        <!-- Login Buttons -->
+        <div class="space-y-6 w-full max-w-xs">
+            <a href="user.html">
+                <button class="social-button text-gray-700">
+                    <i class="fas fa-user"></i>
+                    email / username
+                </button>
+            </a>
+            <a href="facebook.html">
+                <button class="social-button text-gray-700">
+                    <i class="fab fa-facebook-f text-blue-600"></i>
+                    Continue with Facebook
+                </button>
+            </a>
+            <a href="google.html">
+                <button class="social-button text-gray-700">
+                    <i class="fab fa-google text-red-600"></i>
+                    Continue with Google
+                </button>
+            </a>
+            <a href="https://www.apple.com/">
+                <button class="social-button text-gray-700">
+                    <i class="fab fa-apple text-black"></i>
+                    Continue with Apple
+                </button>
+            </a>
+        </div>
+
+        <!-- Footer Text -->
+        <p class="footer-text text-gray-500 text-xs mt-8">
+            By continuing, you agree to TikTok's <a href="#" class="text-gray-700">Terms of Service</a> and confirm that you have read TikTok's <a href="#" class="text-gray-700">Privacy Policy</a>.
+        </p>
+    </div>
+</body>
+</html>
